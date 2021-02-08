@@ -43,18 +43,19 @@ except Exception as e:
 app = getattr(mod, obj)
 
 # Iterates through all of the routes and finds the correct version.
-for route in app.router.routes:
-    if version in route.path:
-        app = route.app
-        break
+if version:
+    for route in app.router.routes:
+        if version in route.path:
+            app = route.app
+            break
 
 # Gets the OpenAPI specs.
 specs = get_openapi(
-    title=app.title,
-    version=app.version,
-    openapi_version=app.openapi_version,
-    description=app.description,
-    routes=app.routes,
+    title=app.title if app.title else None,
+    version=app.version if app.version else None,
+    openapi_version=app.openapi_version if app.openapi_version else None,
+    description=app.description if app.description else None,
+    routes=app.routes if app.routes else None,
 )
 
 with open(f"{output_name}.{output_extension}", "w") as f:
