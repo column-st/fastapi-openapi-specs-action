@@ -1,6 +1,6 @@
 # FastAPI OpenAPI Specs Action
 
-This is a simple GitHub action intended on automatically generating the `openapi.yaml` (or `openapi.json`) file for FastAPI projects. Intended on being use in conjunction with other actions to create complete workflows.
+This is a simple GitHub action intended on automatically generating the `openapi.yaml` (or `openapi.json`) file for FastAPI projects. Intended on being used in conjunction with other actions to create complete workflows.
 
 # Inputs
 
@@ -12,13 +12,13 @@ This is a simple GitHub action intended on automatically generating the `openapi
 
 | Name | Description | Required | Default |
 |-|-|-|-|
-| `installDepedencies` | Command to use to install depedencies before running FastAPI application. This command gets ran as a standard shell command. | 🟡 | `pip install -r requirements.txt` |
+| `installDepedencies` | Command used to install depedencies before running FastAPI application. This command runs as a standard shell command. | 🟡 | `pip install -r requirements.txt` |
 | `moduleDir` | The directory in which the FastAPI Python app lives. This should be the first folder in your project with a `__init__.py` file. | 🟢 |  |
-| `fileName` | The file in which your FastAPI application gets initialized from. | 🟡 | `main.py` |
+| `fileName` | The file from which your FastAPI application gets initialized. | 🟡 | `main.py` |
 | `appName` | The name of the FastAPI object inside your `{moduleDir}/{fileName}.py`. This is used to do `from {moduleDir}.{fileName} import {appName}`. | 🟡 | `app` |
 | `fastapiVersioning` | Only use this if your application uses the `fastapi-versioning` package.  If the `fastapi-versioning` is being used each version of your application has its own individual FastAPI app that is ran in conjunction. This variable defines which FastAPI API to use to generate the client. Use the package's `VersionedFastAPI.prefix_format` string,  something like `v{number}` typically (e.g. `v1`). | 🔴 | `None` |
 | `outputName` | The name of the output file without the extension. | 🟡 | `openapi` |
-| `outputExtension` | Output extension. May either be `yaml` or `json`. | 🟡 | `yaml` |
+| `outputExtension` | Output extension. May be either `yaml` or `json`. | 🟡 | `yaml` |
 
 # Output
 
@@ -57,7 +57,7 @@ jobs:
 
     # Uses an external tool, openapitools-generator-action, to generate the client code.
     # The 'openapirc.json' file is the following: { "packageName": "collector", "projectName": "collector" }
-    # and it lives inside the master branch of the repository. Comamnd outputs a new folder called 
+    # and it lives inside the master branch of the repository. Command outputs a new folder called 
     # 'python-client' with the relevant client code.
     - name: Generate Python Client
       uses: triaxtec/openapitools-generator-action@v1.0.0
