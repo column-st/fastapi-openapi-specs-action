@@ -11,7 +11,7 @@ workspace = os.environ.get("GITHUB_WORKSPACE")
 sys.path.append(workspace)
 
 # Sets-up the ENV variables.
-install = os.environ.get(f"INPUT_{'installDepedencies'.upper()}")
+install = os.environ.get(f"INPUT_{'installDependencies'.upper()}")
 directory = os.environ.get(f"INPUT_{'moduleDir'.upper()}")
 pyfile = os.environ.get(f"INPUT_{'fileName'.upper()}")
 obj = os.environ.get(f"INPUT_{'appName'.upper()}")
