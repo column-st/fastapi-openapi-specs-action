@@ -12,7 +12,7 @@ This is a simple GitHub action intended on automatically generating the `openapi
 
 | Name | Description | Required | Default |
 |-|-|-|-|
-| `installDepedencies` | Command used to install depedencies before running FastAPI application. This command runs as a standard shell command. | 🟡 | `pip install -r requirements.txt` |
+| `installDependencies` | Command used to install depedencies before running FastAPI application. This command runs as a standard shell command. | 🟡 | `pip install -r requirements.txt` |
 | `moduleDir` | The directory in which the FastAPI Python app lives. This should be the first folder in your project with a `__init__.py` file. | 🟢 |  |
 | `fileName` | The file from which your FastAPI application gets initialized. | 🟡 | `main.py` |
 | `appName` | The name of the FastAPI object inside your `{moduleDir}/{fileName}.py`. This is used to do `from {moduleDir}.{fileName} import {appName}`. | 🟡 | `app` |

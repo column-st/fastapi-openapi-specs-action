@@ -6,7 +6,7 @@ branding:
 
 inputs: 
 
-  installDepedencies:
+  installDependencies:
     description: >
       Command to use to install depedencies before running FastAPI application.
       This command gets ran as a standard shell command.
