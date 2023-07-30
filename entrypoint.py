@@ -25,7 +25,7 @@ if not pyfile:
 elif ".py" in pyfile:
     pyfile = pyfile.replace(".py", "")
 
-# Install package depedencies.
+# Install package dependencies.
 if install:
     os.system(install)
 

@@ -8,7 +8,7 @@ inputs:
 
   installDependencies:
     description: >
-      Command to use to install depedencies before running FastAPI application.
+      Command to use to install dependencies before running FastAPI application.
       This command gets ran as a standard shell command.
     default: "pip install -r requirements.txt"
     required: false
