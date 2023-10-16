@@ -48,7 +48,7 @@ jobs:
 
     # Generates a openapi.yaml file based on the FastAPI project.
     - name: Generate OpenAPI file
-      uses: column-street/fastapi-openapi-specs-action@v1.0.0
+      uses: column-st/fastapi-openapi-specs-action@v1.0.2
       with:
         moduleDir: collector
         fileName: main.py
